@@ -1,12 +1,13 @@
 import Image from "next/image"
+import { Avilock } from "./fonts"
 
 export default function Footer() {
     return (
         <div className="bg-[#0B227D] text-white">
-            <div className="w-6xl mx-auto  flex justify-between py-15">
-                <div>
+            <div className="max-w-6xl mx-auto  flex justify-between py-5 sm:py-15 flex-col sm:flex-row px-2 sm:px-0 gap-4 sm:gap-0">
+                <div className="flex flex-col items-center sm:items-start">
                     <Image src={'/logo2.png'} width={190} height={62} alt=""></Image>
-                    <div className="font-bold uppercase text-2xl">Inception - Writing Consultancy Platform</div>
+                    <div className={`font-bold uppercase text-2xl text-center ${Avilock.className}`}>Inception - Writing Consultancy Platform</div>
                 </div>
                 <div className="flex flex-col gap-4 text-sm">
                     <div className="flex gap-2 items-center">

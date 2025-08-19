@@ -3,6 +3,7 @@
 
 import Image from "next/image"
 import React, { useState } from "react"
+import { Avilock } from "./fonts"
 
 export default function Header() {
     const [name, setName] = useState("")
@@ -52,11 +53,11 @@ export default function Header() {
 
 
     return (
-        <div className="w-full p-10 pb-0">
-            <div className="w-6xl mx-auto flex justify-between items-center gap-20 relative pb-40">
-                <div className="flex flex-col max-w-1/2 gap-5">
-                    <div className="p-4 rounded-full border w-fit">Workshop trực tuyến qua Zoom</div>
-                    <div className="font-bold text-7xl uppercase">Du học Mỹ 101</div>
+        <div className="w-full sm:p-10 p-4 sm:pb-0">
+            <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-20 relative sm:pb-40 pb-4">
+                <div className="flex flex-col sm:max-w-1/2 gap-5">
+                    <div className="sm:p-4 p-2 rounded-full border w-fit mx-auto sm:mx-0">Workshop trực tuyến qua Zoom</div>
+                    <div className={`font-bold sm:text-8xl text-7xl uppercase text-center sm:text-left ${Avilock.className}`}>Du học Mỹ 101</div>
                     <div className="text-xl font-semibold">GIẢI MÃ CHIẾN LƯỢC XÂY DỰNG HỒ SƠ VÀ BÀI LUẬN DU HỌC MỸ</div>
 
                     <div className="text-lg font-light">
@@ -95,8 +96,8 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col max-w-1/2 gap-5 w-sm ">
-                    <div className="font-bold text-4xl uppercase text-center">Đăng Ký Tham Dự</div>
+                <div className="flex flex-col sm:max-w-1/2 gap-5 w-sm ">
+                    <div className={`font-bold text-6xl uppercase text-center ${Avilock.className}`}>Đăng Ký Tham Dự</div>
                     <div>
                         <input type="text" placeholder="Họ và tên"
                             className="p-4 border border-[#132478] rounded-lg w-full"
@@ -129,7 +130,7 @@ export default function Header() {
                         <div className="text-red-900">{errorInput}</div>
                     )}
                     <button
-                        className={`w-84 py-4 text-center rounded-lg font-semibold text-white transition-all duration-200 
+                        className={`w-84 mx-auto py-4 text-center rounded-lg font-semibold text-white transition-all duration-200 cursor-pointer
                             ${status === "success"
                             ? "bg-green-600"
                             : status === "loading"
@@ -146,7 +147,7 @@ export default function Header() {
                                 : "Gửi Đăng Ký"}
                     </button>
                 </div>
-                <div className="absolute bottom-0 left-[45%] shadow-[0_4px_1px_-1px_#132478]">
+                <div className="absolute bottom-0 left-[45%] shadow-[0_4px_1px_-1px_#132478] sm:block hidden">
                     <Image src={'/something.png'} alt="something" width={475} height={246}></Image>
                 </div>
             </div>

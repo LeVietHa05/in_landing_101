@@ -1,5 +1,5 @@
 import Image from "next/image"
-
+import { Avilock } from "./fonts"
 const lists = [
     {
         id: 1,
@@ -27,18 +27,18 @@ const lists = [
 
 export default function Spokenman() {
     return (
-        <div className="w-full p-20">
-            <div className="w-6xl mx-auto">
-                <div className="uppercase text-6xl font-bold text-center mb-15">diễn giả workshop</div>
+        <div className="w-full sm:p-20 px-2 py-10">
+            <div className="max-w-6xl mx-auto">
+                <div className={`${Avilock.className} uppercase sm:text-7xl text-6xl  font-bold text-center sm:mb-15 my-5`}>diễn giả workshop</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {lists.map(p => {
                         return (
-                            <div key={p.id} className="flex gap-4 p-4 py-6 border border-[#132478] rounded-2xl">
-                                <div className="w-1/6">
+                            <div key={p.id} className="flex flex-col sm:flex-row items-center gap-4 p-4 py-6 border border-[#132478] rounded-2xl">
+                                <div className="sm:w-1/6">
                                     <Image src={p.imgSrc} alt={p.imgAlt} width={p.imgWidth} height={p.imgHeight}></Image>
                                 </div>
-                                <div className="w-5/6 font-light text-xs flex flex-col gap-1    ">
-                                    <div className="font-bold uppercase text-2xl">{p.name}</div>
+                                <div className="w-5/6 font-light text-xs flex flex-col gap-1 text-center sm:text-left">
+                                    <div className={`font-bold uppercase text-4xl ${Avilock.className}`}>{p.name}</div>
                                     <div className="font-base text-base">{p.job}</div>
                                     <div className="mt-2">{p.experiment}</div>
                                     <div className="leading-5">{p.decription}</div>

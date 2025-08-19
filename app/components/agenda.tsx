@@ -1,4 +1,5 @@
 
+import { Avilock } from "./fonts"
 
 const agenda_items = [
     {
@@ -39,26 +40,26 @@ export default function Agenda() {
             <div className="w-full h-2.5 bg-[#D9D9D9]"></div>
             <div className="w-full h-1.5 bg-[#132478]"></div>
             <div className="w-full h-0.5 bg-[#D9D9D9]"></div>
-            <div className="w-full bg-[#132478] text-white py-20">
-                <div className="w-6xl mx-auto flex justify-between text-center">
-                    <div className="flex flex-col w-3xs">
-                        <div className="text-8xl font-bold">800+</div>
+            <div className="w-full bg-[#132478] text-white sm:py-20 py-4">
+                <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between text-center">
+                    <div className="flex flex-col sm:w-3xs w-full">
+                        <div className={`sm:text-8xl text-7xl font-bold ${Avilock.className}`}>800+</div>
                         <div>HỌC SINH ĐÃ TRÚNG TUYỂN VÀ GIÀNH HỌC BỔNG</div>
                     </div>
-                    <div className="flex flex-col w-3xs">
-                        <div className="text-8xl font-bold">8+</div>
+                    <div className="flex flex-col sm:w-3xs w-full">
+                        <div className={`sm:text-8xl text-7xl font-bold ${Avilock.className}`}>8+</div>
                         <div>KINH NGHIỆM TƯ VẤN SĂN HỌC BỔNG</div>
                     </div>
-                    <div className="flex flex-col w-3xs">
-                        <div className="text-8xl font-bold">100%</div>
+                    <div className="flex flex-col sm:w-3xs w-full">
+                        <div className={`sm:text-8xl text-7xl font-bold ${Avilock.className}`}>100%</div>
                         <div>HỌC SINH NHẬN HỌC BỔNG, HỖ TRỢ TÀI CHÍNH</div>
                     </div>
                 </div>
             </div>
             <div className="bg-[#F0F9FF] w-full mx-auto">
-                <div className="w-6xl mx-auto py-10">
-                    <div className="font-bold uppercase text-5xl pb-10">Agenda</div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#0B227D] font-semibold ">
+                <div className="max-w-6xl mx-auto py-10">
+                    <div className={`${Avilock.className} font-bold uppercase sm:text-7xl text-center sm:text-left text-6xl pb-10`}>Agenda</div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#0B227D] font-semibold px-2">
                         {agenda_items.map((item) => {
                             return (
                                 <div key={item.id}

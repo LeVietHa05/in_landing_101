@@ -3,6 +3,7 @@
 
 import Image from "next/image"
 import React, { useState } from "react"
+import { Avilock } from "./fonts"
 
 export default function Header2() {
     const [name, setName] = useState("")
@@ -21,10 +22,10 @@ export default function Header2() {
 
     return (
         <div className="w-full p-10 pb-0 border-b-12 ">
-            <div className="w-6xl mx-auto flex justify-between items-center gap-20 relative pb-40">
-                <div className="flex flex-col max-w-1/2 gap-5">
-                    <div className="p-4 rounded-full border w-fit">Workshop trực tuyến qua Zoom</div>
-                    <div className="font-bold text-7xl uppercase">Du học Mỹ 101</div>
+            <div className="max-w-6xl mx-auto flex justify-between items-center gap-20 relative pb-40">
+                <div className="flex flex-col sm:max-w-1/2 gap-5">
+                    <div className="sm:p-4 p-2 rounded-full border w-fit mx-auto sm:mx-0">Workshop trực tuyến qua Zoom</div>
+                    <div className={`font-bold sm:text-8xl text-7xl uppercase text-center sm:text-left ${Avilock.className}`}>Du học Mỹ 101</div>
                     <div className="text-xl font-semibold">GIẢI MÃ CHIẾN LƯỢC XÂY DỰNG HỒ SƠ VÀ BÀI LUẬN DU HỌC MỸ</div>
 
                     <div className="text-lg font-light">
