@@ -4,32 +4,32 @@ import { Avilock } from "./fonts"
 const agenda_items = [
     {
         id: 1,
-        time: "00’ - 10’",
+        time: "20:00 - 20:10",
         text: "Giải mã hệ thống tuyển sinh và săn học bổng Mỹ"
     },
     {
         id: 2,
-        time: "10’ - 25’",
+        time: "20:00 - 20:25",
         text: "Chiến lược xây dựng hồ sơ săn học bổng cá nhân hóa"
     },
     {
         id: 3,
-        time: "25’ - 40’",
+        time: "20:25 - 20:40",
         text: "Cách lựa chọn hoạt động ngoại khóa và hoạt động chuyên ngành phù hợp "
     },
     {
         id: 4,
-        time: "40’ - 60’",
+        time: "20:40 - 21:00",
         text: "Những lưu ý khi viết luận săn học bổng Mỹ"
     },
     {
         id: 5,
-        time: "60’ - 75’",
+        time: "21:00 - 21:15",
         text: "Cách thức Inception đồng hành cùng học sinh"
     },
     {
         id: 6,
-        time: "75’ - 90’",
+        time: "21:15 - 21:30",
         text: "Q&A và tài liệu tóm tắt"
     },
 ]
@@ -65,7 +65,7 @@ export default function Agenda() {
                                 <div key={item.id}
                                     className="flex items-center gap-4 p-4 rounded-2xl bg-[#fff] border border-[#BBBBBB] sm:h-[62px] h-fit "
                                 >
-                                    <div className="p-4 py-1 rounded-lg bg-[#0B227D] text-white text-center shrink-0">{item.time}</div>
+                                    <div className="p-4 py-1 rounded-lg bg-[#0B227D] text-white text-center shrink-0 w-[96px] sm:w-[136px]">{item.time}</div>
                                     <div className="">{item.text}</div>
                                 </div>
                             )
