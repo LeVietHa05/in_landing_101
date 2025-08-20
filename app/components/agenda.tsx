@@ -41,29 +41,29 @@ export default function Agenda() {
             <div className="w-full h-1.5 bg-[#132478]"></div>
             <div className="w-full h-0.5 bg-[#D9D9D9]"></div>
             <div className="w-full bg-[#132478] text-white sm:py-20 py-4">
-                <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between text-center">
+                <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between text-center px-6">
                     <div className="flex flex-col sm:w-3xs w-full">
-                        <div className={`sm:text-8xl text-7xl font-bold ${Avilock.className}`}>800+</div>
+                        <div className={`sm:text-8xl text-7xl font-semibold ${Avilock.className}`}>800+</div>
                         <div>HỌC SINH ĐÃ TRÚNG TUYỂN VÀ GIÀNH HỌC BỔNG</div>
                     </div>
                     <div className="flex flex-col sm:w-3xs w-full">
-                        <div className={`sm:text-8xl text-7xl font-bold ${Avilock.className}`}>8+</div>
+                        <div className={`sm:text-8xl text-7xl font-semibold ${Avilock.className}`}>8+</div>
                         <div>KINH NGHIỆM TƯ VẤN SĂN HỌC BỔNG</div>
                     </div>
                     <div className="flex flex-col sm:w-3xs w-full">
-                        <div className={`sm:text-8xl text-7xl font-bold ${Avilock.className}`}>100%</div>
+                        <div className={`sm:text-8xl text-7xl font-semibold ${Avilock.className}`}>100%</div>
                         <div>HỌC SINH NHẬN HỌC BỔNG, HỖ TRỢ TÀI CHÍNH</div>
                     </div>
                 </div>
             </div>
             <div className="bg-[#F0F9FF] w-full mx-auto">
-                <div className="max-w-6xl mx-auto py-10">
-                    <div className={`${Avilock.className} font-bold uppercase sm:text-7xl text-center sm:text-left text-6xl pb-10`}>Agenda</div>
+                <div className="max-w-6xl mx-auto py-10 px-6 sm:px-0">
+                    <div className={`${Avilock.className} font-semibold uppercase sm:text-7xl text-center sm:text-left text-6xl pb-10`}>Agenda</div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#0B227D] font-semibold px-2">
                         {agenda_items.map((item) => {
                             return (
                                 <div key={item.id}
-                                    className="flex items-center gap-4 p-4 rounded-2xl bg-[#fff] border border-[#BBBBBB] h-[62px]"
+                                    className="flex items-center gap-4 p-4 rounded-2xl bg-[#fff] border border-[#BBBBBB] sm:h-[62px] h-fit "
                                 >
                                     <div className="p-4 py-1 rounded-lg bg-[#0B227D] text-white text-center shrink-0">{item.time}</div>
                                     <div className="">{item.text}</div>

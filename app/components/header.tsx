@@ -53,19 +53,19 @@ export default function Header() {
 
 
     return (
-        <div className="w-full sm:p-10 p-4 sm:pb-0">
+        <div className="w-full sm:p-10 p-6 sm:pb-0">
             <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-20 relative sm:pb-40 pb-4">
                 <div className="flex flex-col sm:max-w-1/2 gap-5">
                     <div className="sm:p-4 p-2 rounded-full border w-fit mx-auto sm:mx-0">Workshop trực tuyến qua Zoom</div>
-                    <div className={`font-bold sm:text-8xl text-7xl uppercase text-center sm:text-left ${Avilock.className}`}>Du học Mỹ 101</div>
+                    <div className={`font-semibold sm:text-8xl text-7xl uppercase text-center sm:text-left ${Avilock.className}`}>Du học Mỹ 101</div>
                     <div className="text-xl font-semibold">GIẢI MÃ CHIẾN LƯỢC XÂY DỰNG HỒ SƠ VÀ BÀI LUẬN DU HỌC MỸ</div>
 
-                    <div className="text-lg font-light">
+                    <div className="sm:text-lg font-light">
                         Buổi chia sẻ thực chiến dành cho học sinh Việt Nam,  cung cấp định hướng rõ ràng về các bước chuẩn bị, chiến lược xây dựng hồ sơ và kỹ năng viết bài luận giúp chinh phục học bổng Mỹ.
                     </div>
 
                     <div>
-                        <div className="flex items-center gap-1 text-lg" >
+                        <div className="flex items-center gap-1" >
                             <Image src={'/list-point.png'} alt="." width={20} height={40} />
                             <div>Khung chiến lược xây dựng hồ sơ săn học bổng Mỹ</div>
                         </div>
@@ -97,7 +97,7 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="flex flex-col sm:max-w-1/2 gap-5 w-sm ">
-                    <div className={`font-bold text-6xl uppercase text-center ${Avilock.className}`}>Đăng Ký Tham Dự</div>
+                    <div className={`font-semibold text-6xl uppercase text-center ${Avilock.className}`}>Đăng Ký Tham Dự</div>
                     <div>
                         <input type="text" placeholder="Họ và tên"
                             className="p-4 border border-[#132478] rounded-lg w-full"

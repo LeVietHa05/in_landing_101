@@ -8,7 +8,7 @@ import { Avilock } from "./components/fonts";
 
 export default function Home() {
   return (
-    <div className="text-[#132478]">
+    <div className="text-[#132478] text-sm sm:text-base">
       <Nav />
       <Header />
       <Agenda />
@@ -17,8 +17,8 @@ export default function Home() {
       {/* BANNER 1 */}
       <div className="w-full bg-[#0B227D] text-white">
         <div className="sm:w-4xl w-full mx-auto py-15">
-          <div className={`${Avilock.className} font-bold sm:text-7xl text-5xl text-center uppercase sm:pb-12 pb-4`}>Phù hợp với</div>
-          <div className="flex justify-between font-semibold text-lg p-2 sm:p-0">
+          <div className={`${Avilock.className} font-semibold sm:text-7xl text-5xl text-center uppercase sm:pb-12 pb-4`}>Phù hợp với</div>
+          <div className="flex justify-between font-semibold text-lg p-2 px-4 sm:p-0">
             <div className="w-4/10 text-right">
               HỌC SINH ĐANG TÌM HIỂU CÁCH THỨC SĂN HỌC BỔNG MỸ
             </div>
@@ -32,8 +32,8 @@ export default function Home() {
 
       {/*  */}
       <div>
-        <div className="max-w-6xl mx-auto sm:py-20 p-2 py-5 sm:px-0">
-          <div className={`font-bold sm:text-7xl text-5xl uppercase pb-12 text-center sm:text-left ${Avilock.className}`}>Quà tặng khi tham dự</div>
+        <div className="max-w-6xl mx-auto sm:py-20 px-6 py-5 sm:px-0">
+          <div className={`font-semibold sm:text-7xl text-5xl uppercase py-12 text-center sm:text-left ${Avilock.className}`}>Quà tặng khi tham dự</div>
           <div className="flex justify-between flex-col sm:flex-row gap-4 sm:gap-0">
             <div className="flex flex-col items-start gap-4">
               <div className="flex items-center gap-1" >
