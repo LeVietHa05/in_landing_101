@@ -6,6 +6,12 @@ export default function Nav() {
         const form = document.getElementById("register-form")
         if (form) {
             form.scrollIntoView({ behavior: "smooth", block: "center" })
+            const input = form.querySelector("input")
+            if (input) {
+                setTimeout(() => {
+                    (input as HTMLInputElement).focus()
+                }, 600) // delay khớp với animation scroll
+            }
         }
     }
     return (
@@ -14,7 +20,7 @@ export default function Nav() {
                 <Image src={'/logo.png'} alt="logo" width={190} height={62}
                     className="p-6 sm:p-0"></Image>
                 <div onClick={scrollToForm}
-                    className="h-fit font-semibold sm:text-xl text-base rounded-xl bg-[#132478] sm:p-4 p-2 text-white flex items-center justify-center">
+                    className="h-fit font-semibold sm:text-xl text-base rounded-xl bg-[#132478] sm:p-4 p-2 text-white flex items-center justify-center cursor-pointer">
                     <div >
                         ĐĂNG KÝ NGAY
                     </div>
