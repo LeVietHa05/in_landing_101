@@ -96,7 +96,7 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col sm:max-w-1/2 gap-5 w-sm ">
+                <div className="flex flex-col sm:max-w-1/2 gap-5 w-sm " id="register-form">
                     <div className={`font-semibold text-6xl uppercase text-center ${Avilock.className}`}>Đăng Ký Tham Dự</div>
                     <div>
                         <input type="text" placeholder="Họ và tên"
