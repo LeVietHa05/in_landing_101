@@ -24,9 +24,9 @@ export default function Header2() {
         <div className="w-full p-10 pb-0 border-b-12 ">
             <div className="max-w-6xl mx-auto flex justify-between items-center gap-20 relative pb-40">
                 <div className="flex flex-col sm:max-w-1/2 gap-5">
-                    <div className="sm:p-4 p-2 rounded-full border w-fit mx-auto sm:mx-0">Workshop trực tuyến qua Zoom</div>
-                    <div className={`font-semibold sm:text-8xl text-7xl uppercase text-center sm:text-left ${Avilock.className}`}>cẩm nang du học mỹ</div>
-                    <div className="text-xl font-semibold">CHIẾN LƯỢC XÂY DỰNG HỒ SƠ VÀ BÀI LUẬN</div>
+                    <div className="sm:p-4 p-2 rounded-full border w-fit mx-auto sm:mx-0 mb-5">Workshop trực tuyến qua Zoom</div>
+                    <div className={`font-semibold sm:text-7xl text-5xl uppercase text-center sm:text-left ${Avilock.className}`}>cẩm nang du học mỹ</div>
+                    <div className="sm:text-xl text-base font-semibold">CHIẾN LƯỢC XÂY DỰNG HỒ SƠ VÀ BÀI LUẬN</div>
 
                     <div className="text-lg font-light">
                         Buổi chia sẻ thực chiến dành cho học sinh Việt Nam,  cung cấp định hướng rõ ràng về các bước chuẩn bị, chiến lược xây dựng hồ sơ và kỹ năng viết bài luận giúp chinh phục học bổng Mỹ.
@@ -65,7 +65,7 @@ export default function Header2() {
                     </div>
                 </div>
                 <div className="flex flex-col max-w-1/2 gap-5 w-sm ">
-                    <div className="font-semibold text-4xl uppercase text-center">Đăng Ký Tham Dự</div>
+                    <div className={`font-semibold sm:text-6xl text-5xl uppercase text-center ${Avilock.className}`}>Đăng Ký Tham Dự</div>
                     <div>
                         <input type="text" placeholder="Họ và tên"
                             className="p-4 border border-[#132478] rounded-lg w-full"
