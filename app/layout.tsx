@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import {Montserrat} from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat ({
+const montserrat = Montserrat({
   subsets: ["latin"],
 })
 
@@ -18,6 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=618937683888293&ev=PageView&noscript=1"
+          />
+        </noscript>
+      </head>
       <body
         className={`${montserrat.className} antialiased`}
       >

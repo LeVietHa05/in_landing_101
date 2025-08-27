@@ -4,8 +4,10 @@
 import Image from "next/image"
 import React, { useState } from "react"
 import { Avilock } from "./fonts"
+import useFacebookPixel from "../hooks/useFacebookPixel"
 
 export default function Header() {
+    const { trackEvent} = useFacebookPixel("618937683888293")
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [school, setSchool] = useState("")
@@ -21,10 +23,10 @@ export default function Header() {
         } else {
             setErroInput("")
         }
-
+        
         try {
             setStatus("loading");
-
+            
             const res = await fetch("/api/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -35,12 +37,13 @@ export default function Header() {
                     ques,
                 }),
             });
-
+            
             const data = await res.json();
             console.log(data);
-
+            
             if (data.result == "success") {
                 setStatus("success");
+                trackEvent("Lead", {name, phone, school, ques});
             } else {
                 setStatus("idle");
                 setErroInput("Gửi thất bại, thử lại!");
