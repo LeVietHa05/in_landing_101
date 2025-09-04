@@ -10,7 +10,7 @@ export default function Header2() {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [errorInput, setErroInput] = useState("")
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
     const handleSubmit = async () => {
         console.log(name, phone)
