@@ -12,6 +12,7 @@ export default function Header2() {
     const [referral, setReferral] = useState("")
     const [errorInput, setErroInput] = useState("")
     const [showModal, setShowModal] = useState(false)
+    const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
     const handleSubmit = async () => {
         console.log(name, phone, referral)
@@ -22,6 +23,7 @@ export default function Header2() {
             setErroInput("")
         }
         try {
+            setStatus("loading");
             const res = await fetch("/api/submit2", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -36,10 +38,13 @@ export default function Header2() {
             console.log(data);
             if (data.result === "success") {
                 setShowModal(true);
+                setStatus("success");
             } else {
+                setStatus("idle");
                 setErroInput("Gửi thất bại, thử lại!");
             }
         } catch (error) {
+            setStatus("idle");
             setErroInput("Có lỗi xảy ra!");
         }
     }
@@ -115,11 +120,23 @@ export default function Header2() {
                     {errorInput && (
                         <div className="text-red-900">{errorInput}</div>
                     )}
-                    <div className="w-84 py-4 text-center bg-[#132478] text-white capitalize m-auto rounded-lg font-semibold cursor-pointer"
+                    <button
+                        className={`w-84 mx-auto py-4 text-center rounded-lg font-semibold text-white transition-all duration-200 cursor-pointer
+                            ${status === "success"
+                                ? "bg-green-600"
+                                : status === "loading"
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-[#132478] hover:bg-[#1e3a8a]"
+                            }`}
                         onClick={handleSubmit}
+                        disabled={status === "loading" || status === "success"}
                     >
-                        Nhận Link Zoom
-                    </div>
+                        {status === "loading"
+                            ? "Đang gửi..."
+                            : status === "success"
+                                ? "Đã gửi"
+                                : "Nhận link zoom"}
+                    </button>
                 </div>
                 <div className="absolute bottom-0 left-[45%] shadow-[0_4px_1px_-1px_#132478]">
                     <Image src={'/something.png'} alt="something" width={475} height={246}></Image>
@@ -129,7 +146,10 @@ export default function Header2() {
                 <Modal
                     title="Link Zoom"
                     content="Hãy dùng link sau để tham gia zoom: https://us06web.zoom.us/j/86027091797?pwd=3N5MKbA1pPZAmbZJcGOc208IiAuRJv.1"
-                    onClose={() => setShowModal(false)}
+                    onClose={() => {
+                        setShowModal(false);
+                        window.open("https://us06web.zoom.us/j/86027091797?pwd=3N5MKbA1pPZAmbZJcGOc208IiAuRJv.1", "_blank");
+                    }}
                 />
             )}
         </div>
