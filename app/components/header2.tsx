@@ -4,20 +4,23 @@
 import Image from "next/image"
 import React, { useState } from "react"
 import { Avilock } from "./fonts"
+import Modal from "./modal"
 
 export default function Header2() {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [errorInput, setErroInput] = useState("")
+    const [showModal, setShowModal] = useState(true)
 
     const handleSubmit = async () => {
         console.log(name, phone)
-        if (!/^\d{0,10}$/.test(phone)) { // chỉ cho nhập tối đa 10 số 
+        if (!/^\d{0,10}$/.test(phone)) { // chỉ cho nhập tối đa 10 số
             setErroInput("Phải nhập đúng số điện thoại")
             return;
         } else {
             setErroInput("")
         }
+        setShowModal(true)
     }
 
     return (
@@ -64,7 +67,7 @@ export default function Header2() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col max-w-1/2 gap-5 w-sm ">
+                <div className="flex flex-col max-w-1/2 gap-5 w-sm " id="register-form">
                     <div className={`font-semibold sm:text-6xl text-5xl uppercase text-center ${Avilock.className}`}>Đăng Ký Tham Dự</div>
                     <div>
                         <input type="text" placeholder="Họ và tên"
@@ -85,7 +88,7 @@ export default function Header2() {
                     {errorInput && (
                         <div className="text-red-900">{errorInput}</div>
                     )}
-                    <div className="w-84 py-4 text-center bg-[#132478] text-white capitalize m-auto rounded-lg font-semibold"
+                    <div className="w-84 py-4 text-center bg-[#132478] text-white capitalize m-auto rounded-lg font-semibold cursor-pointer"
                         onClick={handleSubmit}
                     >
                         Nhận Link Zoom
@@ -95,6 +98,13 @@ export default function Header2() {
                     <Image src={'/something.png'} alt="something" width={475} height={246}></Image>
                 </div>
             </div>
+            {showModal && (
+                <Modal
+                    title="Link Zoom"
+                    content="Hãy dùng link sau để tham gia zoom: https://us06web.zoom.us/j/86027091797?pwd=3N5MKbA1pPZAmbZJcGOc208IiAuRJv.1"
+                    onClose={() => setShowModal(false)}
+                />
+            )}
         </div>
     )
 }
