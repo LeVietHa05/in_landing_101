@@ -9,18 +9,39 @@ import Modal from "./modal"
 export default function Header2() {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
+    const [referral, setReferral] = useState("")
     const [errorInput, setErroInput] = useState("")
     const [showModal, setShowModal] = useState(false)
 
     const handleSubmit = async () => {
-        console.log(name, phone)
+        console.log(name, phone, referral)
         if (!/^\d{0,10}$/.test(phone)) { // chỉ cho nhập tối đa 10 số
             setErroInput("Phải nhập đúng số điện thoại")
             return;
         } else {
             setErroInput("")
         }
-        setShowModal(true)
+        try {
+            const res = await fetch("/api/submit2", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name,
+                    phone,
+                    referral,
+                    sheetName: "salezoom"
+                }),
+            });
+            const data = await res.json();
+            console.log(data);
+            if (data.result === "success") {
+                setShowModal(true);
+            } else {
+                setErroInput("Gửi thất bại, thử lại!");
+            }
+        } catch (error) {
+            setErroInput("Có lỗi xảy ra!");
+        }
     }
 
     return (
@@ -84,6 +105,12 @@ export default function Header2() {
                                 //check if number
                                 setPhone(value);
                             }} />
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Mã giới thiệu"
+                            className="p-4 border border-[#132478] rounded-lg w-full"
+                            value={referral}
+                            onChange={(e) => { setReferral(e.target.value) }} />
                     </div>
                     {errorInput && (
                         <div className="text-red-900">{errorInput}</div>
